@@ -27,13 +27,26 @@
     </ul>
   </nav>
 
-  <main class="well col-sm-6">
+  <main class="well col-sm-9">
     <ul id="people"></ul>
   </main>
 
   <li id="template" class="hidden list-group-item">
-    {{ person.firstName }} {{ person.lastName }}
-    ({{ person.secret }})
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>
+            {{person.firstName}}
+          </td>
+          <td>
+            {{person.lastName}}
+          </td>
+          <td><span style="color: #ccc;">
+            {{person.secret}}
+          </td>
+      </tr>
+  </tbody>
+</table>
   </li>
 
   <script src="js/jquery.min.js"></script>
