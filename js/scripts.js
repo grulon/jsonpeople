@@ -20,8 +20,17 @@ $('a[data-remote=true]').on('click', function(ev) {
   });
 });
 
-function loadResults() {
-  console.log('worked');
+function loadResults(data) {
+  //this is a success callback?  or something... but it will receive data, server tells it to run this function.
+  //other way to do this would be .success(function) after the ajax call
+  if (data.firstName) {
+    people.push(data);
+  }
+  else if (data.people){
+    people = people.concat(data.people);
+
+  }
+  listPeople();
 }
 
 function listPeople() {
@@ -43,3 +52,5 @@ function listPeople() {
   });
 
 }
+
+listPeople();
